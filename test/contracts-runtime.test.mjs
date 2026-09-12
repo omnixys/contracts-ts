@@ -202,3 +202,22 @@ test("invitation RSVP and seat errors expose safe client-visible status", () => 
     { invitationId: ids.invitationId },
   );
 });
+
+test("guest sign-up failure is a retryable availability error with a safe reason", () => {
+  const definition = getErrorDefinition(ErrorCode.GUEST_SIGNUP_FAILED);
+  assert.equal(definition.httpStatus, 503);
+  assert.equal(definition.retryable, true);
+  assert.equal(definition.summary, "Guest sign-up could not be completed.");
+  assert.equal(
+    definition.defaultMessage,
+    "Your guest sign-up could not be completed. Please try again.",
+  );
+  assert.deepEqual(
+    getPublicErrorMetadata(ErrorCode.GUEST_SIGNUP_FAILED, {
+      reason: "provisioning-incomplete",
+      upstreamStatus: "must-not-leak",
+      password: "must-not-leak",
+    }),
+    { reason: "provisioning-incomplete" },
+  );
+});

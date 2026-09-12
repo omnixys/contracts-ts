@@ -10,7 +10,7 @@ export interface ErrorDefinition {
 }
 
 /** Increment only when the public error contract changes incompatibly. */
-export const ERROR_CATALOG_VERSION = "1.0.0";
+export const ERROR_CATALOG_VERSION = "1.1.0";
 
 type DefinitionInput = Omit<ErrorDefinition, "code" | "publicMetadataKeys">;
 
@@ -66,6 +66,7 @@ const publicMetadataKeys: Readonly<
   [ErrorCode.TENANT_CONTEXT_UNVERIFIED]: ["tenantId"],
   [ErrorCode.ANALYTICS_INTERNAL_ERROR]: ["reason"],
   [ErrorCode.AUTHENTICATION_INTERNAL_ERROR]: ["reason"],
+  [ErrorCode.GUEST_SIGNUP_FAILED]: ["reason"],
   [ErrorCode.BLOG_INTERNAL_ERROR]: ["reason"],
   [ErrorCode.EVENT_INTERNAL_ERROR]: ["reason"],
   [ErrorCode.GATEWAY_INTERNAL_ERROR]: ["reason"],
@@ -200,6 +201,12 @@ const explicitDefinitions: Readonly<
   ),
   [ErrorCode.AUTHENTICATION_INTERNAL_ERROR]: internalDefinition(
     "Authentication service error.",
+  ),
+  [ErrorCode.GUEST_SIGNUP_FAILED]: definition(
+    "Guest sign-up could not be completed.",
+    "Your guest sign-up could not be completed. Please try again.",
+    503,
+    true,
   ),
   [ErrorCode.ANALYTICS_API_KEY_REQUIRED]: definition(
     "Analytics API key required.",
