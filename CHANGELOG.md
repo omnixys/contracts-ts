@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [4.4.0](https://github.com/omnixys/contracts-ts/compare/v4.3.0...v4.4.0) (2026-09-12)
+
+### Contracts
+
+* **Contracts:** classify guest signup failure as retryable and expose reason ([](https://github.com/omnixys/contracts-ts/commit/43af2d0bb2d2ff6f75b19f2197169ce4d7b69f2e))
+
 ## [4.3.0](https://github.com/omnixys/contracts-ts/compare/v4.2.0...v4.3.0) (2026-09-10)
 
 ### Contracts
