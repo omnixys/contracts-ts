@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [4.5.0](https://github.com/omnixys/contracts-ts/compare/v4.4.0...v4.5.0) (2026-09-13)
+
+### Auth
+
+* **Auth:** add magicLinkDTO ([](https://github.com/omnixys/contracts-ts/commit/b9cae6c7ca920ffd54eaed0b0fee6d9101bdc9b0))
+
 ## [4.4.0](https://github.com/omnixys/contracts-ts/compare/v4.3.0...v4.4.0) (2026-09-12)
 
 ### Contracts
