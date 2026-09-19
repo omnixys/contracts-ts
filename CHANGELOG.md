@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [4.6.0](https://github.com/omnixys/contracts-ts/compare/v4.5.0...v4.6.0) (2026-09-19)
+
+### Contracts
+
+* **Contracts:** add noise log level ([](https://github.com/omnixys/contracts-ts/commit/2a61033534667f17389e3d7cf7ac656a0477551c))
+
 ## [4.5.0](https://github.com/omnixys/contracts-ts/compare/v4.4.0...v4.5.0) (2026-09-13)
 
 ### Auth
