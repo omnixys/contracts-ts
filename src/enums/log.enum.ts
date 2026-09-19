@@ -1,4 +1,5 @@
 export enum LogLevel {
+  noise = "noise",
   trace = "trace",
   debug = "debug",
   info = "info",
